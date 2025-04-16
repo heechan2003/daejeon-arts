@@ -1,0 +1,44 @@
+.nav {
+    display: flex;
+    height: 7rem;
+}
+
+.listWrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-inline: 3em;
+    height: 100%;
+}
+
+.main {
+    cursor: default;
+    color: var(--main-color);
+}
+
+.mainHovered {
+    color: var(--sub-color);
+}
+
+.chevron {
+    display: none;
+}
+
+.list {
+    position: absolute;
+    top: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    border-top: .3rem solid var(--main-color);
+}
+
+.sub {
+    display: flex;
+    padding: 1em .5em;
+    color: var(--color-neutral);
+}
+
+.subHovered {
+    color: var(--main-color);
+}

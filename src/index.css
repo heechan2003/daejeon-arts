@@ -1,0 +1,40 @@
+:root {
+    --main-color: #B7965C;
+    --sub-color: #F5EFE6;
+    --color-neutral: #2C2C2C;
+    --muted-text-color: #A49587;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: "Noto Sans KR", "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-neutral);
+    background-color: #fff;
+    scroll-behavior: smooth;
+}
+
+:lang(ko) {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+:lang(en) {
+    font-family: "Poppins", sans-serif;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}

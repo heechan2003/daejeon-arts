@@ -1,0 +1,109 @@
+.overlay {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.overlayOpen {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobileNavContainer {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 4em 2em;
+    width: 70%;
+    max-width: 20rem;
+    height: 100%;
+    background-color: var(--color-neutral);
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+}
+
+.mobileNavContainerOpen {
+    transform: translateX(0);
+}
+
+.mobileLogoWrap {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    padding-bottom: 2em;
+    margin-bottom: 4em;
+    border-bottom: 0.08rem solid var(--main-color);
+}
+
+.logo {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.logoHeader {
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+
+.mobileNav {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    gap: 1.5em;
+}
+
+.listWrap {
+    color: var(--muted-text-color);
+    cursor: pointer;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5em;
+}
+
+.mainOpen {
+    color: var(--main-color);
+}
+
+.chevron {
+    transition: transform 0.3s ease;
+}
+
+.chevronOpen {
+    transform: rotate(180deg);
+}
+
+.list {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-0.5em);
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.listOpen {
+    max-height: 12rem;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.sub {
+    display: flex;
+    padding: .5em .5em;
+    color: var(--muted-text-color);
+}
+
+.subHovered {
+    color: var(--main-color);
+}

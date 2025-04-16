@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 7rem;
+    padding-left: 3em;
+    background-color: transparent;
+    border-bottom: 0.1rem solid var(--main-color);
+}
+
+.logoWrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.noLogoWrap {
+    opacity: 0;
+}
+
+.logo {
+    width: 3rem;
+    height: 3rem;
+}
+
+.logoHeader {
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+
+.navButton {
+    display: flex;
+    margin-right: 2em;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
