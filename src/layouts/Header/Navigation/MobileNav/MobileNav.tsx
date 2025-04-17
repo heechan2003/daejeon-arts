@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import clsx from "clsx";
 import MobileNavList from "./MobileNavList";
 import { navLinks } from "../navLinks";
-import styles from "./MobileNav.module.css"
+import styles from "./MobileNav.module.css";
 
 interface MobileNavProps {
     isMobileNavOpen: boolean
@@ -15,8 +15,8 @@ const MobileNav = ({ isMobileNavOpen, onClose }:MobileNavProps) => {
     useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
         if (navRef.current && !navRef.current.contains(e.target as Node)) {
-        onClose();
-        }
+            onClose();
+        };
     };
 
     document.addEventListener("mousedown", handleClickOutside);

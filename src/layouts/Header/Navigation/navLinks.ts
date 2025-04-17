@@ -26,4 +26,4 @@ export const navLinks = {
             { label: '뉴스레터', path: '/' },
         ]
     }
-}
+};

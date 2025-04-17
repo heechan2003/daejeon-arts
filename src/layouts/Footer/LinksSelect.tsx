@@ -1,0 +1,53 @@
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FaChevronUp } from "react-icons/fa";
+import clsx from "clsx";
+import styles from "./Footer.module.css";
+
+const links = [
+    { label: '대전광역시청', path: '/' },
+    { label: '대전예술의전당', path: '/' },
+    { label: '대전문화재단', path: '/' },
+    { label: '대전시립미술관', path: '/' },
+    { label: '대전얘술가의집', path: '/' },
+    { label: '대전예총', path: '/' },
+    { label: '대전관광', path: '/' },
+];
+
+const LinksSelect = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div className={styles.selectWrap}>
+            <button
+                className={styles.selectToggle}
+                onClick={() => setIsOpen(prev => !prev)}
+            >
+                <span>관련사이트</span>
+                <FaChevronUp className={clsx(
+                    styles.chevron,
+                    isOpen && styles.chevronOpen
+                )}/>
+            </button>
+            <ul
+                className={clsx(
+                    styles.linksList,
+                    isOpen && styles.linksListOpen
+                )}
+            >
+                {links.map((link) => (
+                    <li key={link.label}>
+                        <Link
+                            to={link.path}
+                            className={styles.link}
+                        >
+                            {link.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default LinksSelect;
