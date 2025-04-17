@@ -33,7 +33,7 @@ footer {
     font-size: 0.8rem;
 }
 
-.linksWrap {
+.policyWrap {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.5em;
@@ -113,10 +113,32 @@ footer {
 }
 
 .social {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: var(--main-color);
 }
 
 .social:hover {
     color: var(--sub-color);
+}
+
+/* mobile-responsive */
+@media (max-width: 768px) {
+    .footerInner {
+        flex-flow: column;
+        align-items: center;
+        flex-basis: 648px;
+        gap: 4em;
+        padding-block: 5em;
+    }
+
+    .policyWrap {
+        margin-bottom: 2em;
+    }
+
+    .socials {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        margin-top: 2em;
+    }
 }

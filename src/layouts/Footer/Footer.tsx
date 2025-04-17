@@ -14,7 +14,7 @@ const Footer = () => {
                     <h1 className={styles.logoHeader}>대전시립예술단</h1>
                 </div>
                 <div className={styles.footerTextWrap}>
-                    <div className={styles.linksWrap}>
+                    <div className={styles.policyWrap}>
                         <Link to="/">개인정보취급방침</Link>
                         <Link to="/">이메일무단수집거부</Link>
                         <Link to="/">이용약관</Link>
