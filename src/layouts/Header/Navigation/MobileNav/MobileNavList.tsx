@@ -11,7 +11,6 @@ interface MobileNavListProps {
 
 const MobileNavList = ({ title, links }: MobileNavListProps) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [hoveredSub, setHoveredSub] = useState<string | null>(null);
 
     return (
         <div
@@ -42,12 +41,7 @@ const MobileNavList = ({ title, links }: MobileNavListProps) => {
                     <li key={label}>
                     <Link
                         to={path}
-                        className={clsx(
-                            styles.sub,
-                            hoveredSub === label && styles.subHovered
-                        )}
-                        onMouseEnter={() => setHoveredSub(label)}
-                        onMouseLeave={() => setHoveredSub(null)}
+                        className={styles.sub}
                     >
                         {label}
                     </Link>

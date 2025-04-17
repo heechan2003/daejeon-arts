@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaChevronUp } from "react-icons/fa";
 import clsx from "clsx";
+import useClickOutside from "../../hooks/useClickOutside";
 import styles from "./Footer.module.css";
 
 const links = [
@@ -16,9 +18,15 @@ const links = [
 
 const LinksSelect = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const selectRef =  useRef<HTMLDivElement>(null);
+
+    useClickOutside(selectRef, () => setIsOpen(false))
 
     return (
-        <div className={styles.selectWrap}>
+        <div
+            className={styles.selectWrap}
+            ref={selectRef}
+        >
             <button
                 className={styles.selectToggle}
                 onClick={() => setIsOpen(prev => !prev)}

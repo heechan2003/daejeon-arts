@@ -1,5 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import clsx from "clsx";
+import useClickOutside from "../../../../hooks/useClickOutside";
 import MobileNavList from "./MobileNavList";
 import { navLinks } from "../navLinks";
 import styles from "./MobileNav.module.css";
@@ -12,18 +14,19 @@ interface MobileNavProps {
 const MobileNav = ({ isMobileNavOpen, onClose }:MobileNavProps) => {
     const navRef = useRef<HTMLDivElement>(null);
 
+    useClickOutside(navRef, onClose);
+    
     useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-        if (navRef.current && !navRef.current.contains(e.target as Node)) {
-            onClose();
+        if (isMobileNavOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+    
+        return () => {
+            document.body.style.overflow = "";
         };
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-    };
-    }, [onClose]);
+    }, [isMobileNavOpen]);
 
     return (
         <div className={clsx(
@@ -37,10 +40,13 @@ const MobileNav = ({ isMobileNavOpen, onClose }:MobileNavProps) => {
                     isMobileNavOpen && styles.mobileNavContainerOpen
                 )}
             >
-                <div className={styles.mobileLogoWrap}>
+                <Link 
+                    className={styles.mobileLogoWrap}
+                    to='/'
+                >
                         <img className={styles.logo} src="/logo.png" alt="logo" />
                         <h1 className={styles.logoHeader}>대전시립예술단</h1>
-                </div>
+                </Link>
                 <nav className={styles.mobileNav}>
                     <MobileNavList title={navLinks.general.title} links={navLinks.general.generalLinks} />
                     <MobileNavList title={navLinks.teams.title} links={navLinks.teams.teamLinks} />

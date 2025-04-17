@@ -57,6 +57,7 @@ footer {
     background: none;
     color: var(--main-color);
     border: .1em solid var(--main-color);
+    cursor: pointer;
 }
 
 .selectToggle > span {

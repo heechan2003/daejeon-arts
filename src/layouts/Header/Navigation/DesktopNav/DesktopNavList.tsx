@@ -10,7 +10,6 @@ interface DesktopNavListProps {
 
 const DesktopNavList = ({ title, links }: DesktopNavListProps) => {
     const [isHovered, setIsHovered] = useState(false);
-    const [hoveredSub, setHoveredSub] = useState<string | null>(null);
 
     return (
         <div
@@ -18,7 +17,6 @@ const DesktopNavList = ({ title, links }: DesktopNavListProps) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => {
                 setIsHovered(false);
-                setHoveredSub(null);
             }}
         >
             <span 
@@ -34,12 +32,7 @@ const DesktopNavList = ({ title, links }: DesktopNavListProps) => {
                     <li key={label}>
                     <Link
                         to={path}
-                        className={clsx(
-                            styles.sub,
-                            hoveredSub === label && styles.subHovered
-                        )}
-                        onMouseEnter={() => setHoveredSub(label)}
-                        onMouseLeave={() => setHoveredSub(null)}
+                        className={styles.sub}
                     >
                         {label}
                     </Link>

@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { FaBars } from "react-icons/fa";
 import DesktopNav from "./Navigation/DesktopNav/DesktopNav";
@@ -16,22 +18,30 @@ const Header = () => {
         }
     }, [isMobile]);
 
+    const portalTarget = document.getElementById("mobile-nav-root");
+
     return (
         <header className={styles.header}>
-            <div className={clsx(
-                styles.logoWrap,
-                isMobileNavOpen && styles.noLogoWrap
-            )}>
+            <Link 
+                className={clsx(
+                    styles.logoWrap,
+                    isMobileNavOpen && styles.noLogoWrap
+                )}
+                to='/'
+            >
                 <img className={styles.logo} src="/logo.png" alt="logo" />
                 <h1 className={styles.logoHeader}>대전시립예술단</h1>
-            </div>
+            </Link>
 
             {isMobile ? (
                 <>
-                    <MobileNav
-                        isMobileNavOpen={isMobileNavOpen}
-                        onClose={() => setIsMobileNavOpen(false)}
-                    />
+                    {portalTarget && createPortal(
+                            <MobileNav
+                                isMobileNavOpen={isMobileNavOpen}
+                                onClose={() => setIsMobileNavOpen(false)}
+                            />,
+                            portalTarget
+                    )}
                     <button
                     className={styles.navButton}
                     onClick={() => setIsMobileNavOpen(true)}

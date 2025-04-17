@@ -9,10 +9,13 @@ const Footer = () => {
     return (
         <footer>
             <div className={styles.footerInner}>
-                <div className={styles.logoWrap}>
+                <Link 
+                    className={styles.logoWrap}
+                    to='/'
+                >
                     <img className={styles.logo} src="/logo.png" alt="logo" />
                     <h1 className={styles.logoHeader}>대전시립예술단</h1>
-                </div>
+                </Link>
                 <div className={styles.footerTextWrap}>
                     <div className={styles.policyWrap}>
                         <Link to="/">개인정보취급방침</Link>
