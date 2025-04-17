@@ -1,6 +1,6 @@
 import DesktopNavList from "./DesktopNavList";
 import { navLinks } from "../navLinks";
-import styles from "./DesktopNav.module.css"
+import styles from "./DesktopNav.module.css";
 
 const DesktopNav = () => {
     return (
