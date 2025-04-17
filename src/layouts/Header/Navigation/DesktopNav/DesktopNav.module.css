@@ -3,6 +3,10 @@
     height: 7rem;
 }
 
+.navScrolled .listWrap .list {
+    background-color: var(--color-neutral);
+}
+
 .listWrap {
     display: flex;
     align-items: center;
@@ -35,8 +39,9 @@
 
 .sub {
     display: flex;
-    padding: 1em .5em;
+    padding: 1.25em;
     color: #fff;
+    font-size: 0.8rem;
 }
 
 .sub:hover {

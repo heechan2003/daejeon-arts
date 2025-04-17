@@ -1,4 +1,5 @@
 .mobile-swiper-wrap {
+    z-index: 0;
     position: relative;
     top: -7em;
     background-color: var(--color-neutral);

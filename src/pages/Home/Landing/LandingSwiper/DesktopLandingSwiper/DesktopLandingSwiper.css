@@ -1,4 +1,5 @@
 .desktop-swiper {
+    z-index: 0;
     top: -7em;
     background-color: var(--color-neutral);
 }
