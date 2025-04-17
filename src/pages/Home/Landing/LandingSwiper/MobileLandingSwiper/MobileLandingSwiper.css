@@ -1,0 +1,41 @@
+.mobile-swiper-wrap {
+    position: relative;
+    top: -7em;
+    background-color: var(--color-neutral);
+}
+
+.mobile-swiper .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+}
+
+.custom-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    bottom: 3em;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 20rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: var(--text-shadow-gold);
+}
+
+.chevron {
+    display: flex;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.chevron:hover {
+    color: var(--main-color);
+}

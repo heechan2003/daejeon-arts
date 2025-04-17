@@ -21,12 +21,12 @@ const Header = () => {
     const portalTarget = document.getElementById("mobile-nav-root");
 
     return (
-        <header className={styles.header}>
+        <header className={clsx(
+            styles.header,
+            isMobileNavOpen && styles.noHeader
+        )}>
             <Link 
-                className={clsx(
-                    styles.logoWrap,
-                    isMobileNavOpen && styles.noLogoWrap
-                )}
+                className={styles.logoWrap}
                 to='/'
             >
                 <img className={styles.logo} src="/logo.png" alt="logo" />

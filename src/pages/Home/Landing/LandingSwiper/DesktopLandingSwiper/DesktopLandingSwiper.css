@@ -1,0 +1,36 @@
+.desktop-swiper {
+    top: -7em;
+    background-color: var(--color-neutral);
+}
+
+.desktop-swiper .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.desktop-swiper .swiper-pagination {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3em;
+}
+
+.desktop-swiper .swiper-pagination-bullet {
+    width: 14rem;
+    height: 2rem;
+    color: #fff;
+    background: none;
+    text-align: center;
+    opacity: 1;
+    border-radius: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: all .4s ease;
+}
+
+.desktop-swiper .swiper-pagination-bullet:hover,
+.desktop-swiper .swiper-pagination-bullet-active {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    text-shadow: var(--text-shadow-gold);
+}
