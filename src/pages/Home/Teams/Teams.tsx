@@ -10,10 +10,12 @@ const Teams = () => {
     const { ref, isIntersecting } = useInView({ threshold: 0.5 });
 
     return (
-        <div className={styles.teamsWrap}>
+        <div 
+            ref={ref}
+            className={styles.teamsWrap}
+        >
             <Heading title='TEAMS'/>
             <div
-                ref={ref}
                 className={clsx(
                     styles.teamCardsWrap,
                     isIntersecting && styles.animate
