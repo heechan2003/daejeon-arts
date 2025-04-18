@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -15,7 +15,7 @@ const Landing = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const { isMobile } = useDevice();
 
-    const sharedProps = {
+    const sharedProps = useMemo(() => ({
         spaceBetween: 0,
         effect: 'fade',
         fadeEffect: { crossFade: true },
@@ -26,13 +26,13 @@ const Landing = () => {
             disableOnInteraction: false,
         },
         modules: [Autoplay, EffectFade, Pagination, Navigation],
-    };
+    }), []);
 
-    const desktopPagination = {
+    const desktopPagination = useMemo(() => ({
         clickable: true,
         renderBullet: (index: number, className: string) =>
             `<span class="${className}">${landingSlides[index].label}</span>`,
-    };
+    }), []);
 
     return (
         <div className={clsx(
