@@ -1,16 +1,84 @@
-import useIsMobile from "../../../hooks/useIsMobile";
-import DesktopLandingSwiper from "./LandingSwiper/DesktopLandingSwiper/DesktopLandingSwiper";
-import MobileLandingSwiper from "./LandingSwiper/MobileLandingSwiper/MobileLandingSwiper";
+import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import clsx from 'clsx';
+import { useDevice } from '../../../context/DeviceContext';
+import './Landing.css';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { landingSlides } from './landingSlides';
 
 const Landing = () => {
-    const isMobile = useIsMobile();
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const { isMobile } = useDevice();
+
+    const sharedProps = {
+        spaceBetween: 0,
+        effect: 'fade',
+        fadeEffect: { crossFade: true },
+        loop: true,
+        speed: 1200,
+        autoplay: {
+            delay: 6000,
+            disableOnInteraction: false,
+        },
+        modules: [Autoplay, EffectFade, Pagination, Navigation],
+    };
+
+    const desktopPagination = {
+        clickable: true,
+        renderBullet: (index: number, className: string) =>
+            `<span class="${className}">${landingSlides[index].label}</span>`,
+    };
 
     return (
-        <div>
-            {isMobile ?
-                <MobileLandingSwiper /> :
-                <DesktopLandingSwiper />
-            }
+        <div className={clsx(
+            'swiper-wrap',
+            isMobile ? 'mobile-swiper-wrap' : 'desktop-swiper-wrap'
+        )}>
+            <Swiper
+                {...sharedProps}
+                navigation={
+                    isMobile
+                        ? {
+                            nextEl: '.next-el',
+                            prevEl: '.prev-el',
+                        }
+                        : false
+                }
+                pagination={isMobile ? false : desktopPagination}
+                onInit={(swiper) => {
+                    setCurrentSlide(swiper.realIndex);
+                }}
+                onSlideChange={(swiper) => {
+                    setCurrentSlide(swiper.realIndex);
+                }}
+                className={isMobile ? 'mobile-swiper' : 'desktop-swiper'}
+            >
+                {landingSlides.map((slide, key) => (
+                    <SwiperSlide
+                        key={key}
+                        style={{
+                            backgroundImage: `url(${slide.url})`,
+                        }}
+                    />
+                ))}
+            </Swiper>
+
+            {isMobile && (
+                <div className="mobile-pagination">
+                    <button className="prev-el chevron">
+                        <FaChevronLeft />
+                    </button>
+                    <span>{landingSlides[currentSlide].label}</span>
+                    <button className="next-el chevron">
+                        <FaChevronRight />
+                    </button>
+                </div>
+            )}
         </div>
     );
 };

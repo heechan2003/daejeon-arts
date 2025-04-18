@@ -1,8 +1,8 @@
-import orchestraImg from '../../../../assets/images/main_img/orchestra_main.jpg';
-import danceImg from '../../../../assets/images/main_img/dance_main.jpg';
-import vocalImg from '../../../../assets/images/main_img/vocal_main.jpg';
-import youthVocalImg from '../../../../assets/images/main_img/youth_vocal_main.jpg';
-import gukakImg from '../../../../assets/images/main_img/gukak_main.jpg';
+import orchestraImg from '../../../assets/images/main_img/orchestra_main.jpg';
+import danceImg from '../../../assets/images/main_img/dance_main.jpg';
+import vocalImg from '../../../assets/images/main_img/vocal_main.jpg';
+import youthVocalImg from '../../../assets/images/main_img/youth_vocal_main.jpg';
+import gukakImg from '../../../assets/images/main_img/gukak_main.jpg';
 
 
 export const landingSlides = [

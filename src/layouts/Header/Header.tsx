@@ -3,14 +3,14 @@ import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { FaBars } from "react-icons/fa";
+import { useDevice } from "../../context/DeviceContext";
 import DesktopNav from "./Navigation/DesktopNav/DesktopNav";
 import MobileNav from "./Navigation/MobileNav/MobileNav";
-import useIsMobile from "../../hooks/useIsMobile";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import styles from "./Header.module.css";
 
 const Header = () => {
-    const isMobile = useIsMobile();
+    const { isMobile } = useDevice();
     const { scrollY } = useScrollPosition();
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     const isScrolled = scrollY > 10;
