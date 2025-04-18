@@ -24,7 +24,7 @@
 .desktop-swiper .swiper-pagination-bullet {
     width: 14rem;
     height: 2rem;
-    color: #fff;
+    color: var(--color-white);
     background: none;
     text-align: center;
     opacity: 1;
@@ -58,7 +58,7 @@
     width: 20rem;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #fff;
+    color: var(--color-white);
     text-shadow: var(--text-shadow-gold);
 }
 
@@ -66,7 +66,7 @@
     display: flex;
     background: none;
     border: none;
-    color: #fff;
+    color: var(--color-white);
     font-size: 2rem;
     cursor: pointer;
     transition: all 0.4s ease;

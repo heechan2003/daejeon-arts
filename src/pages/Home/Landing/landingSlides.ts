@@ -4,7 +4,6 @@ import vocalImg from '../../../assets/images/main_img/vocal_main.jpg';
 import youthVocalImg from '../../../assets/images/main_img/youth_vocal_main.jpg';
 import gukakImg from '../../../assets/images/main_img/gukak_main.jpg';
 
-
 export const landingSlides = [
     {
         label: "대전시립교향악단",

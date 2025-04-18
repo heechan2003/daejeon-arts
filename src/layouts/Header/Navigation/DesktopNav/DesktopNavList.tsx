@@ -6,7 +6,7 @@ import styles from "./DesktopNav.module.css";
 interface DesktopNavListProps {
     title: string;
     links: { label: string; path: string }[];
-}
+};
 
 const DesktopNavList = ({ title, links }: DesktopNavListProps) => {
     const [isHovered, setIsHovered] = useState(false);

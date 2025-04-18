@@ -97,14 +97,14 @@ footer {
     padding: .75em 1em;
     border: .1em solid var(--main-color);
     border-bottom: none;
-    background-color: #fff;
+    background-color: var(--color-white);
     color: var(--muted-text-color);
     font-size: .8rem;
 }
 
 .link:hover {
     background-color: var(--main-color);
-    color: #fff;
+    color: var(--color-white);
 }
 
 .socials {

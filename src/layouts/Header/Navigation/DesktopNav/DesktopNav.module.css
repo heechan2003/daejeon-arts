@@ -40,7 +40,7 @@
 .sub {
     display: flex;
     padding: 1.25em;
-    color: #fff;
+    color: var(--color-white);
     font-size: 0.8rem;
 }
 

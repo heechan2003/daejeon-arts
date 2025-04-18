@@ -9,7 +9,7 @@ import styles from "./MobileNav.module.css";
 interface MobileNavProps {
     isMobileNavOpen: boolean
     onClose: () => void;
-}
+};
 
 const MobileNav = ({ isMobileNavOpen, onClose }:MobileNavProps) => {
     const navRef = useRef<HTMLDivElement>(null);

@@ -7,7 +7,7 @@ import styles from "./MobileNav.module.css";
 interface MobileNavListProps {
     title: string;
     links: { label: string; path: string }[];
-}
+};
 
 const MobileNavList = ({ title, links }: MobileNavListProps) => {
     const [isOpen, setIsOpen] = useState(false);
