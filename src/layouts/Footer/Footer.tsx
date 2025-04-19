@@ -28,7 +28,7 @@ const Footer = () => {
                         <span>copyright 2025 All right reserved.</span>
                     </div>
                 </div>
-                <div className={styles.LinksSocials}>
+                <div>
                     <LinksSelect />
                     <div className={styles.socials}>
                         <Link to='/'>

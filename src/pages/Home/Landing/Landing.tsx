@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import clsx from 'clsx';
 import { useDevice } from '../../../context/DeviceContext';
+import { useLazyBackgrounds } from '../../../hooks/useLazyBackground';
 import './Landing.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import SlideInner from './SlideInner/SlideInner';
@@ -15,6 +16,7 @@ import { landingSlides } from './landingSlides';
 const Landing = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const { isMobile } = useDevice();
+    useLazyBackgrounds();
 
     const sharedProps = useMemo(() => ({
         spaceBetween: 0,
@@ -62,9 +64,8 @@ const Landing = () => {
                 {landingSlides.map((slide, key) => (
                     <SwiperSlide
                         key={key}
-                        style={{
-                            backgroundImage: `url(${slide.imageUrl})`,
-                        }}
+                        className='lazy-bg'
+                        data-bg={slide.imageUrl}
                     >
                         <SlideInner 
                             url={slide.url}

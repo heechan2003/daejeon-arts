@@ -15,7 +15,7 @@ const DesktopNav = ( { isScrolled }: DesktopNavProps) => {
         )}>
             <DesktopNavList title={navLinks.general.title} links={navLinks.general.generalLinks} />
             <DesktopNavList title={navLinks.teams.title} links={navLinks.teams.teamLinks} />
-            <DesktopNavList title={navLinks.community.title} links={navLinks.community. communityLinks} />
+            <DesktopNavList title={navLinks.community.title} links={navLinks.community.communityLinks} />
         </nav>
     );
 };

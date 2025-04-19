@@ -2,59 +2,74 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    margin-block: 5em;
+    margin-block: 5rem;
 }
 
 .teamCardsWrap {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    margin-top: 4em;
-    opacity: 1;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "a a o"
+    "a a d"
+    "v y g";
+    gap: .5rem;
+    width: 100%;
+    max-width: 1280px;
+    margin-top: 5rem;
+}
+
+.arthall {
+    grid-area: a;
+}
+.orchestra {
+    grid-area: o;
+}
+.dance {
+    grid-area: d;
+}
+.vocal {
+    grid-area: v;
+}
+.youthVocal {
+    grid-area: y;
+}
+.gukak {
+    grid-area: g;
 }
 
 .teamCard {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    background-color: var(--main-color);
-}
-
-.teamCard:nth-of-type(2) .teamImageContainer,
-.teamCard:nth-of-type(4) .teamImageContainer {
-    order: 2;
-}
-
-.teamCard:nth-of-type(2) .teamTextContainer,
-.teamCard:nth-of-type(4) .teamTextContainer {
-    order: 1;
-}
-
-.teamImageContainer {
-    overflow: hidden;
-}
-
-.teamImageContainer img {
-    display: block;
+    display: flex;
+    position: relative;
     width: 100%;
     aspect-ratio: 1;
-    object-fit: cover;
-    transition: transform 1.3s ease;
-}
-
-.teamImageContainer:hover img {
-    transform: scale(1.1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .teamTextContainer {
     display: flex;
     flex-flow: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 1.5em 2em;
+    gap: 3rem;
+    width: 100%;
     color: var(--color-white);
+    background-color: var(--main-color);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.teamTextContainer:hover {
+    opacity: 1;
+}
+
+.teamTextContainer h3 {
+    font-size: 1.5rem;
 }
 
 .teamTextContainer p {
-    font-size: 0.8rem;
     text-align: center;
     color: var(--color-white);
 }
@@ -62,7 +77,6 @@
 .teamLink {
     display: inline-block;
     position: relative;
-    font-size: 0.8rem;
     color: var(--color-white);
 }
 
@@ -86,20 +100,5 @@
 
 /* mobile responsive */
 @media (max-width: 768px) {
-    .teamCardsWrap {
-        grid-template-columns: 1fr;
-    }
 
-    .teamCard {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-    }
-
-    .teamCard .teamImageContainer {
-        order: 1;
-    }
-
-    .teamCard .teamTextContainer {
-        order: 2;
-    }
 }

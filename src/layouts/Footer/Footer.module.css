@@ -136,6 +136,12 @@ footer {
         margin-bottom: 2em;
     }
 
+    .linksList {
+        left: 0;
+        transform: none;
+        width: 100%;
+    }
+
     .socials {
         display: flex;
         justify-content: center;

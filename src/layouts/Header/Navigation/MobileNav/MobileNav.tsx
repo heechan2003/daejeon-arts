@@ -50,7 +50,7 @@ const MobileNav = ({ isMobileNavOpen, onClose }:MobileNavProps) => {
                 <nav className={styles.mobileNav}>
                     <MobileNavList title={navLinks.general.title} links={navLinks.general.generalLinks} />
                     <MobileNavList title={navLinks.teams.title} links={navLinks.teams.teamLinks} />
-                    <MobileNavList title={navLinks.community.title} links={navLinks.community. communityLinks} />
+                    <MobileNavList title={navLinks.community.title} links={navLinks.community.communityLinks} />
                 </nav>
             </div>
         </div>

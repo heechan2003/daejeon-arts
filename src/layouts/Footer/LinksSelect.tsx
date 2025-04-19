@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaChevronUp } from "react-icons/fa";
 import clsx from "clsx";
@@ -45,12 +44,13 @@ const LinksSelect = () => {
             >
                 {links.map((link) => (
                     <li key={link.label}>
-                        <Link
-                            to={link.path}
+                        <a
                             className={styles.link}
+                            href={link.path}
+                            target="_blank"
                         >
                             {link.label}
-                        </Link>
+                        </a>
                     </li>
                 ))}
             </ul>

@@ -20,7 +20,7 @@ const SlideInner = ({ url }: SlideInnerProps) => {
                 href={url}
                 target='_blank'
             >
-                <span>공연 바로가기</span>
+                공연 바로가기
             </a>
         </div>
     );

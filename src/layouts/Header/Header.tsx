@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
@@ -21,7 +21,7 @@ const Header = () => {
         }
     }, [isMobile]);
 
-    const portalTarget = document.getElementById("mobile-nav-root");
+    const portalTarget = useMemo(() => document.getElementById("mobile-nav-root"), []);
 
     return (
         <header className={clsx(
@@ -47,8 +47,8 @@ const Header = () => {
                             portalTarget
                     )}
                     <button
-                    className={styles.navButton}
-                    onClick={() => setIsMobileNavOpen(true)}
+                        className={styles.navButton}
+                        onClick={() => setIsMobileNavOpen(true)}
                     >
                         <FaBars />
                     </button>
