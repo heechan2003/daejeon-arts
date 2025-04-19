@@ -1,10 +1,6 @@
 .nav {
     display: flex;
-    height: 7rem;
-}
-
-.navScrolled .listWrap .list {
-    background-color: var(--color-neutral);
+    height: 100%;
 }
 
 .listWrap {
@@ -35,13 +31,22 @@
     transform: translateX(-50%);
     width: 10rem;
     border-top: .3rem solid var(--main-color);
+    background-color: white;
+}
+
+.navScrolled .listWrap .list {
+    background-color: var(--color-neutral);
 }
 
 .sub {
     display: flex;
     padding: 1.25em;
-    color: var(--color-white);
+    color: var(--color-neutral);
     font-size: 0.8rem;
+}
+
+.navScrolled .sub {
+    color: var(--color-white);
 }
 
 .sub:hover {

@@ -1,13 +1,23 @@
 .swiper-wrap {
     position: relative;
     z-index: 0;
-    top: -7em;
+    top: -5rem;
     background-color: var(--color-neutral);
 }
 
 .swiper-slide {
+    display: flex;
+    padding: 10em 5em;
     background-size: cover;
     background-position: center;
+}
+
+.swiper-slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--linear-background);
+    z-index: 1;
 }
 
 /* desktop swiper */

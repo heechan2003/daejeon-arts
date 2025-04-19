@@ -9,12 +9,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-top: 4em;
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.teamCardsWrap.animate {
-    animation: slideUp 1s ease-out forwards;
+    opacity: 1;
 }
 
 .teamCard {
@@ -106,13 +101,5 @@
 
     .teamCard .teamTextContainer {
         order: 2;
-    }
-}
-
-/* keyframe */
-@keyframes slideUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }

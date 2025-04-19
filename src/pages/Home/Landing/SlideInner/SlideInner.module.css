@@ -1,0 +1,83 @@
+.slideInner {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    gap: 3rem;
+    z-index: 1;
+    color: var(--color-white);
+}
+
+.slideTitle {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.quote:nth-of-type(2) {
+    align-self: flex-end;
+}
+
+.slideTitle h2 {
+    font-family: "Nanum Myeongjo", serif;
+    color: var(--color-white);
+    text-shadow: var(--text-shadow-gold);
+}
+
+.slideTitle .slideFirstWord {
+    font-family: "Nanum Myeongjo", serif;
+    color: var(--main-color);
+    font-size: 5rem;
+}
+
+.slideButton {
+    position: relative;
+    width: fit-content;
+    overflow: hidden;
+    padding: 0.75rem 1.5rem;
+    border: 0.1rem solid var(--color-white);
+    transition: 0.5s ease-in-out;
+}
+
+.slideButton span {
+    position: relative;
+    color: var(--color-white);
+    text-shadow: var(--text-shadow-gold);
+    z-index: 2;
+}
+
+.slideButton::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 145%;
+    transition: 0.5s ease-in-out;
+    transform: translateX(-130%) translateY(-24%) rotate(45deg);
+}
+
+.slideButton:hover::after {
+    transform: translateX(-9%) translateY(-24%) rotate(45deg);
+}
+
+.slideButton::after {
+    background: var(--main-color);
+}
+
+/* mobile responsive */
+@media (max-width: 768px) {
+    .slideTitle h2 {
+        font-size: 2rem;
+    }
+    
+    .slideTitle .slideFirstWord {
+        font-size: 3rem;
+    }
+
+    .quote {
+        font-size: 1rem;
+    }
+
+    .slideButton {
+        transform: scale(0.7);
+    }
+}

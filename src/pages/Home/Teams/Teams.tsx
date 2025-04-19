@@ -1,25 +1,16 @@
 import { Link } from 'react-router-dom';
-import clsx from 'clsx';
-import useInView from '../../../hooks/useInView';
 import Heading from '../../../components/Header/Heading';
 import { formatDesc } from '../../../utils/formatDesc';
 import { teamsInfo } from './teamsInfo';
 import styles from  './Teams.module.css';
 
 const Teams = () => {
-    const { ref, isIntersecting } = useInView({ threshold: 0.5 });
 
     return (
-        <div 
-            ref={ref}
-            className={styles.teamsWrap}
-        >
+        <div className={styles.teamsWrap}>
             <Heading title='TEAMS'/>
             <div
-                className={clsx(
-                    styles.teamCardsWrap,
-                    isIntersecting && styles.animate
-                )}
+                className={styles.teamCardsWrap}
             >
                 {teamsInfo.map(({label, desc, url, imageUrl}, key) => (
                     <div

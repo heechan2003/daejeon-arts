@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import { useDevice } from '../../../context/DeviceContext';
 import './Landing.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import SlideInner from './SlideInner/SlideInner';
 import { landingSlides } from './landingSlides';
 
 const Landing = () => {
@@ -62,9 +63,13 @@ const Landing = () => {
                     <SwiperSlide
                         key={key}
                         style={{
-                            backgroundImage: `url(${slide.url})`,
+                            backgroundImage: `url(${slide.imageUrl})`,
                         }}
-                    />
+                    >
+                        <SlideInner 
+                            url={slide.url}
+                        />
+                    </SwiperSlide>
                 ))}
             </Swiper>
 
