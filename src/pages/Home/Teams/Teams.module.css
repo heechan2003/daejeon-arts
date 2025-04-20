@@ -15,8 +15,9 @@
     "v y g";
     margin-top: 8rem;
     gap: .5rem;
-    width: 100%;
+    width: 90%;
     max-width: 1280px;
+    opacity: 0;
 }
 
 .arthall {
@@ -38,6 +39,23 @@
     grid-area: g;
 }
 
+.animate {
+    opacity: 1;
+}
+
+.animate > * {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: cardSlideUp 0.6s ease forwards;
+}
+
+.animate > *:nth-child(1) { animation-delay: 0.2s; }
+.animate > *:nth-child(2) { animation-delay: 0.4s; }
+.animate > *:nth-child(3) { animation-delay: 0.6s; }
+.animate > *:nth-child(4) { animation-delay: 0.8s; }
+.animate > *:nth-child(5) { animation-delay: 1s; }
+.animate > *:nth-child(6) { animation-delay: 1.2s; }
+
 /* Mobile layout */
 @media (max-width: 768px) {
     .teamCardsWrap {
@@ -54,5 +72,13 @@
     .arthall,
     .gukak {
         aspect-ratio: 2 / 1;
+    }
+}
+
+/* keyframe */
+@keyframes cardSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

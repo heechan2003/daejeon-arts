@@ -10,7 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
     gap: 3rem;
     width: 100%;
     color: var(--color-white);
@@ -28,28 +27,42 @@
 }
 
 /* arthall */
+.arthallCard {
+    background: var(--linear-background);
+}
+
 .arthallInner {
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    justify-content: center;
     flex-basis: 450px;
+    gap: 3rem;
+    color: var(--color-white);
     aspect-ratio: 1;
-    font-size: 3rem;
+    font-size: 2rem;
+    line-height: 4rem;
 }
 
 .arthall {
     font-family: "Nanum Myeongjo", serif;
+    font-weight: bold;
+    text-shadow: var(--text-shadow-gold);
 }
 
 .arthallAccent {
-    font-size: 5rem;
+    color: var(--main-color);
+    font-size: 4rem;
 }
 
-.arthallFirst {
+.arthallStart {
     align-self: flex-start;
 }
 
-.arthallSecond {
+.arthallCenter {
+    align-self: center;
+}
+
+.arthallEnd {
     align-self: flex-end;
 }
 
@@ -96,8 +109,8 @@
 @media (max-width: 768px) {
     .arthallInner {
         flex-basis: 250px;
-        padding: 1rem;
-        font-size: 1.5rem;
+        gap: 0;
+        font-size: 1rem;
     }
 
     .arthallAccent {

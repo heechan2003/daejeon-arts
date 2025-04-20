@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import clsx from 'clsx';
 import { useLazyBackgrounds } from '../../../hooks/useLazyBackground';
+import useInView from '../../../hooks/useInView';
 import { useDevice } from '../../../context/DeviceContext';
 import arthallImg from '../../../assets/images/sub_img/arthall.webp'
 import Heading from '../../../components/Header/Heading';
@@ -13,6 +15,7 @@ const Teams = () => {
     const { isMobile } = useDevice();
     // stores card currently expanded on mobile
     const [activeCard, setActiveCard] = useState<string | null>(null);
+    const { ref, isIntersecting } = useInView({ threshold: 0.3 });
 
     useEffect(() => {
         // reset active card when switched to desktop
@@ -29,10 +32,16 @@ const Teams = () => {
     };
 
     return (
-        <div className={styles.teamsWrap}>
+        <div
+            ref={ref}
+            className={styles.teamsWrap}
+        >
             <Heading title='TEAMS'/>
             <div
-                className={styles.teamCardsWrap}
+                className={clsx(
+                    styles.teamCardsWrap,
+                    isIntersecting && styles.animate
+                )}
             >
                 <ArthallCard
                     label='arthall'

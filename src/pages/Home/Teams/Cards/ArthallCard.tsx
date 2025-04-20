@@ -23,18 +23,16 @@ const ArthallCard = ({ label, imageUrl, activeCard, mobileToggleCard }: ArthallC
             <div 
                 className={clsx(
                     styles.cardText,
+                    styles.arthallCard,
                     activeCard === label && styles.visible
                 )}
             >
                 <div className={styles.arthallInner}>
-                    <p className={clsx(styles.arthall, styles.arthallFirst)}>
-                        <span className={clsx(styles.arthall, styles.arthallAccent)}>여러분</span>의
+                    <p className={clsx(styles.arthall, styles.arthallStart)}>여러분의 마음을 움직일</p>
+                    <p className={clsx(styles.arthall, styles.arthallCenter)}>
+                        <span  className={clsx(styles.arthall, styles.arthallAccent)}>공연단</span>들을
                     </p>
-                    <p className={clsx(styles.arthall, styles.arthallSecond)}>마음을 움직일</p>
-                    <p className={clsx(styles.arthall, styles.arthallFirst)}>
-                        <span  className={clsx(styles.arthall, styles.arthallAccent)}>공연단</span>을
-                    </p>
-                    <p className={clsx(styles.arthall, styles.arthallSecond)}>소개합니다</p>
+                    <p className={clsx(styles.arthall, styles.arthallEnd)}>소개합니다</p>
                 </div>
             </div>
         </div>

@@ -5,14 +5,15 @@
 
 .headingWrap h2 {
     position: relative;
+    font-size: 4rem;
     font-weight: 600;
     opacity: 0;
     transform: translateX(-50px);
 }
 
 .headingWrap.animate h2 {
-    animation: slideIn 0.6s ease-out forwards;
-    animation-delay: 0.2s;
+    animation: slideIn 0.4s ease-out forwards;
+    animation-delay: 0.1s;
 }
 
 .headingWrap h2::after {
@@ -26,8 +27,8 @@
 }
 
 .headingWrap.animate h2::after {
-    animation: underlineGrow 0.6s ease-out forwards;
-    animation-delay: 0.8s;
+    animation: underlineGrow 0.4s ease-out forwards;
+    animation-delay: 0.4s;
 }
 
 /* mobile responsive */
@@ -43,8 +44,8 @@
     }
 
     .headingWrap.animate h2 {
-        animation: slideUp 0.6s ease-out forwards;
-        animation-delay: 0.2s;
+        animation: slideUp 0.4s ease-out forwards;
+        animation-delay: 0.1s;
     }
 
     .headingWrap h2::after {
@@ -52,8 +53,8 @@
     }
 
     .headingWrap.animate h2::after {
-        animation: underlineGrowMobile 0.6s ease-out forwards;
-        animation-delay: 0.8s;
+        animation: underlineGrowMobile 0.4s ease-out forwards;
+        animation-delay: 0.4s;
     }
 }
 
@@ -67,7 +68,7 @@
 
 @keyframes underlineGrow {
     to {
-        width: 30rem;
+        width: 648px;
     }
 }
 
