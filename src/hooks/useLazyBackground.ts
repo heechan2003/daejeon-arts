@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+// Lazy-loads background images for elements with the 'lazy-bg' class when they come into view
 export const useLazyBackgrounds = () => {
     useEffect(() => {
         const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
@@ -14,7 +15,6 @@ export const useLazyBackgrounds = () => {
                 if (bg) {
                     el.style.backgroundImage = `url(${bg})`;
                     el.classList.remove('lazy-bg');
-                    el.classList.add('bg-loaded'); // optional for styling
                     obs.unobserve(el);
                 }
                 }

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaBlogger } from "react-icons/fa";
-import LinksSelect from "./LinksSelect";
+import LinksSelect from "./LinksSelect/LinksSelect";
 import styles from "./Footer.module.css";
 
 const Footer = () => {

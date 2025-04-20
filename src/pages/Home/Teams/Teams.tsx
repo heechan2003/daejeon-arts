@@ -1,13 +1,32 @@
-import clsx from 'clsx';
+import { useState, useEffect } from 'react';
 import { useLazyBackgrounds } from '../../../hooks/useLazyBackground';
+import { useDevice } from '../../../context/DeviceContext';
 import arthallImg from '../../../assets/images/sub_img/arthall.webp'
 import Heading from '../../../components/Header/Heading';
-import { formatDesc } from '../../../utils/formatDesc';
+import ArthallCard from './Cards/ArthallCard';
+import TeamCard from './Cards/TeamCard';
 import { teamsInfo } from './teamsInfo';
 import styles from  './Teams.module.css';
 
 const Teams = () => {
     useLazyBackgrounds();
+    const { isMobile } = useDevice();
+    // stores card currently expanded on mobile
+    const [activeCard, setActiveCard] = useState<string | null>(null);
+
+    useEffect(() => {
+        // reset active card when switched to desktop
+        if (!isMobile) {
+            setActiveCard(null);
+        }
+    }, [isMobile]);
+
+    // Toggle overlay text(mobile only)
+    const mobileToggleCard = (label: string) => {
+        if(isMobile) {
+            setActiveCard(activeCard === label ? null : label);
+        };
+    };
 
     return (
         <div className={styles.teamsWrap}>
@@ -15,38 +34,26 @@ const Teams = () => {
             <div
                 className={styles.teamCardsWrap}
             >
-                <div 
-                    className={clsx(
-                        styles.teamCard,
-                        styles.arthall,
-                        'lazy-bg'
-                    )}
-                    data-bg={arthallImg}
-                >
-                </div>
-                {teamsInfo.map(({className, label, desc, url, imageUrl}, key) => (
-                    <div
-                        key={key}
-                        className={clsx(
-                            styles.teamCard,
-                            styles[className],
-                            'lazy-bg'
-                        )}
-                        data-bg={imageUrl}
-                    >
-                        <div className={styles.teamTextContainer}>
-                            <h3>{label}</h3>
-                            <p>{formatDesc(desc)}</p>
-                            <a
-                                className={styles.teamLink}
-                                href={url}
-                                target='_blank'
-                            >
-                                사이트 바로가기
-                            </a>
-                        </div>
-                    </div>
-                ))}
+                <ArthallCard
+                    label='arthall'
+                    imageUrl={arthallImg}
+                    activeCard={activeCard}
+                    mobileToggleCard={mobileToggleCard}
+                />
+                {teamsInfo.map(({className, label, desc, url, imageUrl}, key) => {
+                    return (
+                        <TeamCard
+                            key={key}
+                            className={className}
+                            label={label}
+                            desc={desc}
+                            url={url}
+                            imageUrl={imageUrl}
+                            activeCard={activeCard}
+                            mobileToggleCard={mobileToggleCard}
+                        />
+                    );
+                })}
             </div>
         </div>
     );

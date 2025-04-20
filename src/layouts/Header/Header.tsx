@@ -15,12 +15,14 @@ const Header = () => {
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     const isScrolled = scrollY > 10;
 
+    // Close mobile navigation when not on mobile
     useEffect(() => {
         if (!isMobile) {
             setIsMobileNavOpen(false);
         }
     }, [isMobile]);
 
+    // Portal target created for mobile navigation display
     const portalTarget = useMemo(() => document.getElementById("mobile-nav-root"), []);
 
     return (

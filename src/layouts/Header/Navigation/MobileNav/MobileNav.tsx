@@ -14,15 +14,17 @@ interface MobileNavProps {
 const MobileNav = ({ isMobileNavOpen, onClose }:MobileNavProps) => {
     const navRef = useRef<HTMLDivElement>(null);
 
+    // Close menu when clicking outside the nav container
     useClickOutside(navRef, onClose);
-    
+
+    // Prevent body scroll when mobile nav is open
     useEffect(() => {
         if (isMobileNavOpen) {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "";
         }
-    
+
         return () => {
             document.body.style.overflow = "";
         };

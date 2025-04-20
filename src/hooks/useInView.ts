@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
+// Returns a ref and a boolean indicating if the element has entered the viewport (once)
 const useInView = (options?: IntersectionObserverInit) => {
     const ref = useRef<HTMLDivElement | null>(null);
     const [hasIntersected, setHasIntersected] = useState(false);

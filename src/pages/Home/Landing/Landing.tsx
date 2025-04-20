@@ -6,11 +6,11 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import clsx from 'clsx';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useDevice } from '../../../context/DeviceContext';
 import { useLazyBackgrounds } from '../../../hooks/useLazyBackground';
 import './Landing.css';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import SlideInner from './SlideInner/SlideInner';
+import LandingSlide from './LandingSlide/LandingSlide';
 import { landingSlides } from './landingSlides';
 
 const Landing = () => {
@@ -18,6 +18,7 @@ const Landing = () => {
     const { isMobile } = useDevice();
     useLazyBackgrounds();
 
+    // Swiper props shared by both desktop and mobile
     const sharedProps = useMemo(() => ({
         spaceBetween: 0,
         effect: 'fade',
@@ -31,6 +32,7 @@ const Landing = () => {
         modules: [Autoplay, EffectFade, Pagination, Navigation],
     }), []);
 
+    // Custom bullet pagination for desktop swiper
     const desktopPagination = useMemo(() => ({
         clickable: true,
         renderBullet: (index: number, className: string) =>
@@ -61,30 +63,28 @@ const Landing = () => {
                 }}
                 className={isMobile ? 'mobile-swiper' : 'desktop-swiper'}
             >
-                {landingSlides.map((slide, key) => (
+                {landingSlides.map(({url, imageUrl}, key) => (
                     <SwiperSlide
                         key={key}
                         className='lazy-bg'
-                        data-bg={slide.imageUrl}
+                        data-bg={imageUrl}
                     >
-                        <SlideInner 
-                            url={slide.url}
-                        />
+                        <LandingSlide url={url}/>
                     </SwiperSlide>
                 ))}
             </Swiper>
 
-            {isMobile && (
-                <div className="mobile-pagination">
-                    <button className="prev-el chevron">
+            {isMobile &&
+                <div className='mobile-pagination'>
+                    <button className='prev-el chevron'>
                         <FaChevronLeft />
                     </button>
                     <span>{landingSlides[currentSlide].label}</span>
-                    <button className="next-el chevron">
+                    <button className='next-el chevron'>
                         <FaChevronRight />
                     </button>
                 </div>
-            )}
+            }
         </div>
     );
 };

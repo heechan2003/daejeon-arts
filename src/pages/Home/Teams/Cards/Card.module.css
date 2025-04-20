@@ -1,0 +1,115 @@
+.card {
+    display: flex;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cardText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 3rem;
+    width: 100%;
+    color: var(--color-white);
+    background-color: var(--main-color);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.cardText:hover {
+    opacity: 1;
+}
+
+.visible {
+    opacity: 1;
+}
+
+/* arthall */
+.arthallInner {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    flex-basis: 450px;
+    aspect-ratio: 1;
+    font-size: 3rem;
+}
+
+.arthall {
+    font-family: "Nanum Myeongjo", serif;
+}
+
+.arthallAccent {
+    font-size: 5rem;
+}
+
+.arthallFirst {
+    align-self: flex-start;
+}
+
+.arthallSecond {
+    align-self: flex-end;
+}
+
+/* team */
+.teamText {
+    flex-flow: column;
+    gap: 3rem;
+}
+
+.teamText h3 {
+    font-size: 1.5rem;
+}
+
+.teamText p {
+    text-align: center;
+    color: var(--color-white);
+}
+
+.teamLink {
+    display: inline-block;
+    position: relative;
+    color: var(--color-white);
+}
+
+.teamLink::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.1rem;
+    bottom: -.1rem;
+    left: 0;
+    background-color: var(--color-white);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+
+.teamLink:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Mobile card-specific tweaks */
+@media (max-width: 768px) {
+    .arthallInner {
+        flex-basis: 250px;
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .arthallAccent {
+        font-size: 2rem;
+    }
+
+    .teamText h3 {
+        font-size: 1.25em;
+    }
+
+    .teamText p,
+    .teamLink {
+        font-size: 0.8rem;
+    }
+}

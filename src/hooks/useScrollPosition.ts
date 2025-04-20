@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+// Tracks the vertical scroll position and direction (up/down) of the window
 const useScrollPosition = () => {
     const [scrollY, setScrollY] = useState(window.scrollY);
     const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(null);

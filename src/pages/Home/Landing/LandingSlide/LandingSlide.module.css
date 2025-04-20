@@ -1,4 +1,4 @@
-.slideInner {
+.landingSlideInner {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -7,28 +7,24 @@
     color: var(--color-white);
 }
 
-.slideTitle {
+.landingSlideTitle {
     display: flex;
     font-size: 1.5rem;
 }
 
-.quote:nth-of-type(2) {
-    align-self: flex-end;
-}
-
-.slideTitle h2 {
+.landingSlideTitle h2 {
     font-family: "Nanum Myeongjo", serif;
     color: var(--color-white);
     text-shadow: var(--text-shadow-gold);
 }
 
-.slideTitle .slideFirstWord {
+.landingSlideFirstWord {
     font-family: "Nanum Myeongjo", serif;
     color: var(--main-color);
     font-size: 5rem;
 }
 
-.slideButton {
+.landingSlideButton {
     position: relative;
     width: fit-content;
     padding: 0.75rem 1.5rem;
@@ -37,17 +33,20 @@
     transition: 0.4s ease-in-out;
 }
 
-.slideButton:hover {
+.landingSlideButton:hover {
     background-color: var(--main-color);
 }
 
-/* mobile responsive */
+.quote:nth-of-type(2) {
+    align-self: flex-end;
+}
+
 @media (max-width: 768px) {
-    .slideTitle h2 {
+    .landingSlideTitle h2 {
         font-size: 2rem;
     }
-    
-    .slideTitle .slideFirstWord {
+
+    .landingSlideFirst-word {
         font-size: 3rem;
     }
 
@@ -55,7 +54,7 @@
         font-size: 1rem;
     }
 
-    .slideButton {
+    .landingSlideButton {
         transform: scale(0.7);
     }
 }

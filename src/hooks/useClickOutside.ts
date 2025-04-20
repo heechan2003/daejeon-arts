@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+// Triggers the given handler when a user clicks or touches outside the referenced element
 const useClickOutside = (
     ref: React.RefObject<HTMLElement | null>,
     handler: (event: MouseEvent | TouchEvent) => void

@@ -2,8 +2,8 @@ import { useRef } from "react";
 import { useState } from "react";
 import { FaChevronUp } from "react-icons/fa";
 import clsx from "clsx";
-import useClickOutside from "../../hooks/useClickOutside";
-import styles from "./Footer.module.css";
+import useClickOutside from "../../../hooks/useClickOutside";
+import styles from "./LinksSelect.module.css";
 
 const links = [
     { label: '대전광역시청', path: '/' },
