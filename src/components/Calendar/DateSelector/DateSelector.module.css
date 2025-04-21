@@ -6,6 +6,10 @@
     border-block: 0.1rem solid var(--main-color);
 }
 
+.mobileDay {
+    display: none;
+}
+
 .date {
     width: 1.75rem;
     text-align: center;
@@ -34,4 +38,23 @@
 
 .sunday {
     color: var(--crimson-text-color);
+}
+
+/* mobile, tablet responsive */
+@media (max-width: 1280px) {
+    .dateSelector {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .mobileDay {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .day {
+        display: none;
+    }
 }

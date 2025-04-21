@@ -29,6 +29,11 @@ const DateSelector = ({ selectedDate, setSelectedDate, year, month, monthMeta }:
                             setSelectedDate(formattedDate);
                         }}
                     >
+                        {key < 7 && (
+                            <div className={clsx(styles.mobileDay, isSunday && styles.sunday)}>
+                                {day.toUpperCase()}
+                            </div>
+                        )}
                         <div className={clsx(
                             styles.number, 
                             hasPerformance && styles.hasPerformance,
