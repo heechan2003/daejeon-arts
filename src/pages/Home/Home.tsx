@@ -2,6 +2,9 @@ import bannerImageUrl from "../../assets/images/banner/art_hall.webp"
 import Landing from "./Landing/Landing";
 import Teams from "./Teams/Teams";
 import Banner from "../../components/Banner/Banner";
+import Performance from "./Performance/Performance";
+
+const bannerUrl = "https://www.youtube.com/watch?v=-qyCzczkniQ&ab_channel=%EB%8C%80%EC%A0%84%EC%98%88%EC%88%A0%EC%9D%98%EC%A0%84%EB%8B%B9";
 
 const Home = () => {
     return (
@@ -9,9 +12,10 @@ const Home = () => {
             <Landing />
             <Teams />
             <Banner
-                link="https://www.youtube.com/watch?v=-qyCzczkniQ&ab_channel=%EB%8C%80%EC%A0%84%EC%98%88%EC%88%A0%EC%9D%98%EC%A0%84%EB%8B%B9"
+                link={bannerUrl}
                 imageUrl={bannerImageUrl}
             />
+            <Performance />
         </div>
     );
 };
