@@ -1,5 +1,10 @@
 .performance-swiper-wrap {
     display: flex;
+    justify-content: center;
+}
+
+.performance-swiper-inner {
+    display: flex;
     align-items: center;
     position: relative;
     z-index: 0;
@@ -17,6 +22,7 @@
     transition: transform 0.5s ease;
     aspect-ratio: 1 / 1.4;
     border: 0.3em solid var(--main-color);
+    pointer-events: none;
 }
 
 .performance-swiper-slide img {
@@ -27,9 +33,9 @@
 }
 
 .performance-swiper-slide.swiper-slide-active {
-    pointer-events: auto;
     cursor: pointer;
     transform: scale(1) !important;
+    pointer-events: auto;
 }
 
 .performance-swiper-slide::before {
@@ -39,7 +45,6 @@
     background: var(--linear-background);
     opacity: 0;
     transition: opacity 0.5s ease;
-    pointer-events: none;
     border-radius: inherit;
 }
 
@@ -48,7 +53,7 @@
     opacity: 1;
 }
 
-.performance-swiper-wrap .performance-swiper-pagination {
+.performance-swiper-inner .performance-swiper-pagination {
     width: max-content;
     position: absolute;
     left: 50%;
@@ -56,17 +61,18 @@
     transform: translate(-50%, 0);
 }
 
-.performance-swiper-wrap .chevron {
+.performance-swiper-inner .chevron {
     font-size: 2.75rem;
     color: var(--main-color);
     transition: all 0.3s ease;
 }
 
-.performance-swiper-wrap .chevron:hover {
+.performance-swiper-inner .chevron:hover {
     transform: scale(1.2);
 }
 
-.performance-swiper-wrap .chevron:disabled {
+.performance-swiper-inner .chevron:disabled {
+    cursor: default;
     color: var(--sub-color);
 }
 
@@ -78,7 +84,7 @@
 
 
 @media (max-width: 768px) {
-    .performance-swiper-wrap {
+    .performance-swiper-inner {
         max-width: 648px;
     }
 

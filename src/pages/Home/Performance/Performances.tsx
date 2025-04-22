@@ -3,7 +3,7 @@ import { getPerformancesMeta } from "../../../utils/getPerformancesMeta";
 import Calendar from "../../../components/Calendar/Calendar";
 import PerformancesSwiper from "./PerformancesSwiper.tsx/PerformancesSwiper";
 import PerformanceDetail from "./PerformanceDetails.tsx/PerformanceDetail";
-import styles from "./Performances.module.css"
+import styles from "./Performances.module.css";
 import { Performance } from "../../../types/performance";
 
 const Performances = () => {

@@ -1,0 +1,99 @@
+.performanceDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 3rem;
+    background-color: var(--sub-color);
+}
+
+.performanceDetailInner {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-basis: 1280px;
+}
+
+.performanceDetailImage {
+    width: 35%;
+    aspect-ratio: 1/1.4;
+    border: 0.3rem solid var(--main-color);
+}
+
+.performanceDetailImage img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.performanceDetailText {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 35%;
+    font-weight: bold;
+}
+
+.performanceDetailTextCenter {
+    display: flex;
+    flex-flow: column;
+    gap: clamp(0.5rem, 2vw, 2.5rem);
+}
+
+.performanceDetailText h3 {
+    font-size: 1.75rem;
+}
+
+.performanceDetailText span {
+    margin-left: .5rem;
+    color: var(--muted-text-color);
+}
+
+.performanceDetailBook {
+    border-top: 0.1rem solid var(--main-color);
+    padding: 1rem;
+}
+
+.performanceDetailBook a {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.performanceDetailBook a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.2rem;
+    bottom: -.2rem;
+    left: 0;
+    background-color: var(--main-color);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+
+.performanceDetailBook a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media (max-width: 768px) {
+    .performanceDetail {
+        font-size: 0.8rem;
+    }
+
+    .performanceDetailImage,
+    .performanceDetailText {
+        width: 40%;
+    }
+
+    .performanceDetailText h3 {
+        font-size: 1.25rem;
+    }
+
+    .performanceDetailBook a {
+        font-size: 1rem;
+    }
+}

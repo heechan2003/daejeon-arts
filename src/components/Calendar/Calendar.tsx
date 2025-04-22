@@ -43,20 +43,22 @@ const Calendar = ({ selectedDate, setSelectedDate }:CalendarProps) => {
 
     return (
         <div className={styles.calendar}>
-            <YearMonthSelector
-                onChange={handleYearMonthChange}
-                year={year}
-                month={month}
-                startYear={2020}
-                endYear={2030}
-            />
-            <DateSelector
-                selectedDate={selectedDate}
-                setSelectedDate={setSelectedDate}
-                year={year}
-                month={month}
-                monthMeta={monthMeta}
-            />
+            <div className={styles.calendarWrap}>
+                <YearMonthSelector
+                    onChange={handleYearMonthChange}
+                    year={year}
+                    month={month}
+                    startYear={2020}
+                    endYear={2030}
+                />
+                <DateSelector
+                    selectedDate={selectedDate}
+                    setSelectedDate={setSelectedDate}
+                    year={year}
+                    month={month}
+                    monthMeta={monthMeta}
+                />
+            </div>
         </div>
     );
 };

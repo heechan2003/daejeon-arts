@@ -1,13 +1,18 @@
 .calendar {
     display: flex;
+    justify-content: center;
+}
+
+.calendarWrap {
+    display: flex;
     flex-flow: column;
     gap: 1.5rem;
-    width: 90%;
+    width: 100%;
     max-width: 1280px;
 }
 
 @media (max-width: 1280px) {
-    .calendar{
+    .calendarWrap{
         align-items: center;
         max-width: 648px;
     }
