@@ -41,16 +41,16 @@ const Landing = () => {
 
     return (
         <div className={clsx(
-            'swiper-wrap',
-            isMobile ? 'mobile-swiper-wrap' : 'desktop-swiper-wrap'
+            'landing-swiper-wrap',
+            isMobile ? 'mobile-landing-swiper-wrap' : 'desktop-landing-swiper-wrap'
         )}>
             <Swiper
                 {...sharedProps}
                 navigation={
                     isMobile
                         ? {
-                            nextEl: '.next-el',
-                            prevEl: '.prev-el',
+                            nextEl: '.landing-next-el',
+                            prevEl: '.landing-prev-el',
                         }
                         : false
                 }
@@ -61,12 +61,12 @@ const Landing = () => {
                 onSlideChange={(swiper) => {
                     setCurrentSlide(swiper.realIndex);
                 }}
-                className={isMobile ? 'mobile-swiper' : 'desktop-swiper'}
+                className={isMobile ? 'mobile-landing-swiper' : 'desktop-landing-swiper'}
             >
                 {landingSlides.map(({url, imageUrl}, key) => (
                     <SwiperSlide
                         key={key}
-                        className='lazy-bg'
+                        className='lazy-bg landing-swiper-slide'
                         data-bg={imageUrl}
                     >
                         <LandingSlide url={url}/>
@@ -75,12 +75,12 @@ const Landing = () => {
             </Swiper>
 
             {isMobile &&
-                <div className='mobile-pagination'>
-                    <button className='prev-el chevron'>
+                <div className='mobile-landing-pagination'>
+                    <button className='landing-prev-el landing-chevron'>
                         <FaChevronLeft />
                     </button>
                     <span>{landingSlides[currentSlide].label}</span>
-                    <button className='next-el chevron'>
+                    <button className='landing-next-el landing-chevron'>
                         <FaChevronRight />
                     </button>
                 </div>
