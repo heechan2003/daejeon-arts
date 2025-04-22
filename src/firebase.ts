@@ -15,3 +15,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export const performanceCollectionRef = collection(db, "performance_dates");
+export const reviewsCollectionRef = collection(db, "reviews");
+export const announcementCollectionRef = collection(db, "announcements");
+export const newsLetterCollectionRef = collection(db, "newsletters");

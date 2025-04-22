@@ -1,0 +1,52 @@
+.news {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.newsInner {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 3rem;
+    width: 90%;
+    flex-basis: 1280px;
+    gap: 4rem;
+}
+
+.newsNav {
+    display: flex;
+    align-self: flex-start;
+    gap: 3rem;
+}
+
+.newsButton {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-neutral);
+}
+
+.newsMore {
+    align-self: flex-end;
+    font-size: 1.5rem;
+}
+
+.newsButton::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.2rem;
+    bottom: -.1rem;
+    left: 0;
+    background-color: var(--color-neutral);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+
+.newsButton:hover::after,
+.newsButton.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
