@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { FaBars } from "react-icons/fa";
+import logo from "../../assets/images/logo.webp"
 import { useDevice } from "../../context/DeviceContext";
 import DesktopNav from "./Navigation/DesktopNav/DesktopNav";
 import MobileNav from "./Navigation/MobileNav/MobileNav";
@@ -35,7 +36,7 @@ const Header = () => {
                 className={styles.logoWrap}
                 to='/'
             >
-                <img className={styles.logo} src="/logo.png" alt="logo" />
+                <img className={styles.logo} src={logo} alt="logo" />
                 <h1 className={styles.logoHeader}>대전시립예술단</h1>
             </Link>
 

@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
+import logo from "../../../../assets/images/logo.webp"
 import useClickOutside from "../../../../hooks/useClickOutside";
 import MobileNavList from "./MobileNavList";
 import { navLinks } from "../navLinks";
@@ -46,7 +47,7 @@ const MobileNav = ({ isMobileNavOpen, onClose }:MobileNavProps) => {
                     className={styles.mobileLogoWrap}
                     to='/'
                 >
-                        <img className={styles.logo} src="/logo.png" alt="logo" />
+                        <img className={styles.logo} src={logo} alt="logo" />
                         <h1 className={styles.logoHeader}>대전시립예술단</h1>
                 </Link>
                 <nav className={styles.mobileNav}>

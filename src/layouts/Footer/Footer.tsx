@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaBlogger } from "react-icons/fa";
+import logo from "../../assets/images/logo.webp"
 import LinksSelect from "./LinksSelect/LinksSelect";
 import styles from "./Footer.module.css";
 
@@ -13,7 +14,7 @@ const Footer = () => {
                     className={styles.logoWrap}
                     to='/'
                 >
-                    <img className={styles.logo} src="/logo.png" alt="logo" />
+                    <img className={styles.logo} src={logo} alt="logo" />
                     <h1 className={styles.logoHeader}>대전시립예술단</h1>
                 </Link>
                 <div className={styles.footerTextWrap}>

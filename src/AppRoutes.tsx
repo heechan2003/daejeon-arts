@@ -4,7 +4,7 @@ import Home from './pages/Home/Home';
 
 const AppRoutes = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/daejeon-arts">
             <Routes>
                 <Route path='/' element={<Layout />}>
                     <Route index element={<Home />} />
