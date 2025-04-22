@@ -79,6 +79,17 @@
     transform-origin: bottom left;
 }
 
+.performanceDetailEmpty {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    flex-basis: 1280px;
+    gap: 2rem;
+    color: var(--muted-text-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     .performanceDetail {
         font-size: 0.8rem;

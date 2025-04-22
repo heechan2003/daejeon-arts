@@ -44,7 +44,7 @@ const PerformanceDetail = ({ selectedPerformance }:PerformanceDetail) => {
                         </div>
                     </div> :
                     <div className={styles.performanceDetailEmpty}>
-                        <FaRegCalendarAlt />
+                        <FaRegCalendarAlt className={styles.calendarIcon}/>
                         <p>공연을 선택하면 상세 정보를 볼 수 있습니다</p>
                     </div>
                 }

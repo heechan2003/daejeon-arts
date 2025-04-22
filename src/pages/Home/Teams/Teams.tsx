@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLazyBackgrounds } from '../../../hooks/useLazyBackground';
 import { useDevice } from '../../../context/DeviceContext';
-import arthallImg from '../../../assets/images/sub_img/arthall.webp'
+import arthallImg from '../../../assets/images/sub_img/arthall.webp';
 import ArthallCard from './Cards/ArthallCard';
 import TeamCard from './Cards/TeamCard';
 import { teamsInfo } from './teamsInfo';
@@ -29,9 +29,7 @@ const Teams = () => {
 
     return (
         <div className={styles.teamsWrap}>
-            <div
-                className={styles.teamCardsWrap}
-            >
+            <div className={styles.teamCardsWrap}>
                 <ArthallCard
                     label='arthall'
                     imageUrl={arthallImg}
